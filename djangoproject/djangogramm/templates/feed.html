@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% load bootstrap5 %}
+{% load bootstrap_icons %}
+{% load static %}
+
+{% block title %}Feed{% endblock %}
+{% block content %}
+{% for post in posts %}
+{% include 'posts.html' %}
+{% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}

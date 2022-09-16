@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap_icons %}
+{% load cloudinary %}
+
+
+
+{% block title %}{{ profile.username }}{% endblock %}
+
+{% block content %}
+<div class="user">
+    {% if profile.profile_photo %}
+        <img src="{{ profile.profile_photo.url }}" alt="Не работает" class="avatar">
+    {% endif %}
+    <h1>{{ profile.username }}</h1>
+    {% if profile.bio %}
+    <p><h3>{{ profile.bio }}</h3></p>
+    {% endif %}
+    <h3>Followers: <span class="followers_counter_user">{{number_followers}}</span></h3>
+    {% if user.username == profile.username %}
+    <a href="{% url 'user_edit' %}" class="btn btn-primary">Edit profile</a>
+    <a href="{% url 'create_post' %}" class="btn btn-primary">Create post</a>
+    {% else %}
+        <form action="{% if is_followed %}{% url 'unfollow' %}{% else %}{% url 'follow' %}{% endif %}"
+              class="follow_form" method="post">{% csrf_token %}
+            <button type="submit" class="{% if is_followed %}followed{% else %}not_followed{% endif %}"
+                    data-user_to_follow={{profile.id}}>
+                <span>{% if is_followed %}Unfollow{% else %}Follow{% endif %}</span></button>
+        </form>
+    {% endif %}
+    <br><br><br><br>
+    <h2>Posts</h2>
+    <br>
+</div>
+
+{% for post in posts %}
+{% include 'posts.html' %}
+{% endfor %}
+{% endblock %}

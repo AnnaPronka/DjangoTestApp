@@ -1,0 +1,1 @@
+web: python djangoproject/manage.py runserver

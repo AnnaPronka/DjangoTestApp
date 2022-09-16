@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+<br>
+<a href="{% url "social:begin" "github" %}">Git</a>
+<a href="{% url "social:begin" "google-oauth2" %}">Google</a>
+{% endblock %}
