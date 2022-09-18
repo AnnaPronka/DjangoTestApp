@@ -2,8 +2,8 @@
 
 ## Deploy:
 
-### Heroku
-### PostgreSQL
+### - Heroku
+### - PostgreSQL
 
 ## Features:
 
@@ -16,10 +16,10 @@
 
 ## Frontend:
 
-### JavaScript
-### CSS 
-### HTML
-### Vue.js
-### Webpack 
-### jQuery
+### - JavaScript
+### - CSS 
+### - HTML
+### - Vue.js
+### - Webpack 
+### - jQuery
 
