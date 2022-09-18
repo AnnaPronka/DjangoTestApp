@@ -10,7 +10,7 @@
 ### - Bootstrap5
 ### - Bootstrap Icons
 ### - Cloudinary
-### - Social Authentication 
+### - Social Authentication, third-party OAuth application 
 ### - WhiteNoise
 ### - Pillow
 
